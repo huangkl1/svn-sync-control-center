@@ -1,0 +1,33 @@
+
+# Dependencies and local build artifacts
+node_modules/
+.npm/
+coverage/
+*.tsbuildinfo
+
+# Logs and local environment files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.*
+!.env.example
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Obsidian runtime data (the plugin is developed outside a Vault)
+.obsidian/
+
+# Private development notes and local screenshots
+doc/
+img/
+初始提示词.txt
+初始提示词.txt.bak
+SVN插件设计方案.md
+ui-check.png
+commit-confirmation-check.png

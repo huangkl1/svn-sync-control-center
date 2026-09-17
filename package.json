@@ -1,0 +1,18 @@
+{
+  "name": "obsidian-svn-sync-control-center",
+  "version": "0.1.1",
+  "description": "Obsidian SVN synchronization control center",
+  "type": "module",
+  "scripts": {
+    "test": "node test/ui-state.test.mjs && node test/svn-service.test.mjs && node test/runtime-state.test.mjs && node test/history-comparison.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "build": "node esbuild.config.mjs",
+    "verify": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "esbuild": "^0.24.2",
+    "obsidian": "^1.7.2",
+    "typescript": "^5.7.2"
+  }
+}

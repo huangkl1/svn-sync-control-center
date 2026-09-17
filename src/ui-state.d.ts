@@ -1,0 +1,23 @@
+import type { SvnUiState } from "./types";
+
+export const DEFAULT_IGNORE_PATTERNS: string[];
+export function createDemoUiState(): SvnUiState;
+export function selectedChangeCount(state: SvnUiState): number;
+export function canSubmit(state: SvnUiState): boolean;
+export function applyMergeSource(merge: SvnUiState["mergeByConflictId"][string], source: "local" | "remote"): string;
+export function validateMergeResult(result: string): { valid: boolean; message?: string };
+export function groupChanges(changes: SvnUiState["changes"]): Record<SvnUiState["changes"][number]["kind"], SvnUiState["changes"]>;
+export function selectAllSubmittable(changes: SvnUiState["changes"], selected: boolean): SvnUiState["changes"];
+export function isConfigurationRequired(state: SvnUiState): boolean;
+export function mergeForConflict(state: SvnUiState, conflictId: string): SvnUiState["mergeByConflictId"][string] | undefined;
+export function writeMergeResult(state: SvnUiState, conflictId: string, resultText: string): SvnUiState;
+export function buildOperationPayload(state: SvnUiState, operation: string, detail?: Record<string, unknown>): Record<string, unknown>;
+export function createAssociationDraft(mode?: "checkout" | "import"): { mode: "checkout" | "import"; repositoryUrl: string; username: string; password: string; targetDirectory: string; initialCommitMessage: string };
+export function updateAssociationDraft<T extends object>(draft: T, update: Partial<T>): T;
+export function associationPayload(draft: ReturnType<typeof createAssociationDraft>): Record<string, string>;
+export function applyUiUpdate(state: SvnUiState, update: import("./types").SvnUiUpdate): SvnUiState;
+export function shouldRenderUiUpdate(context: { editingCommitMessage: boolean }): boolean;
+export function resolveSvnExecutableFromDirectoryFiles(files: Array<{ relativePath?: string; absolutePath?: string }>): string | undefined;
+export function shouldRenderOperationBar(operation: SvnUiState["operation"], uiError?: string): boolean;
+export function isWriteOperation(operation: import("./types").SvnOperationName): boolean;
+export function shouldRenderOperationResult(operation: SvnUiState["operation"]): boolean;

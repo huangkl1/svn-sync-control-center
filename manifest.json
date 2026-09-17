@@ -1,0 +1,9 @@
+{
+  "id": "svn-sync-control-center",
+  "name": "SVN 同步控制中心",
+  "version": "0.1.1",
+  "minAppVersion": "1.5.0",
+  "description": "在 Obsidian 中查看并管理 SVN 工作副本。",
+  "author": "wc·d",
+  "isDesktopOnly": true
+}
